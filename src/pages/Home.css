@@ -1,0 +1,74 @@
+/* Estilos para a página inicial */
+
+.header {
+  background-color: #4caf50;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #fff;
+  color: #4caf50;
+  font-weight: bold;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  background-color: #333;
+  padding: 0.5rem 0;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  padding: 1.5rem;
+}
+
+.nav-link:hover {
+  background-color: #575757;
+}
+
+.container {
+  padding: 2rem;
+  text-align: center;
+}
+
+.features {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.feature-card {
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  width: 250px;
+  text-align: center;
+}
+
+.footer {
+  margin-top: 3.5rem;
+  background-color: #4caf50;
+  color: white;
+  text-align: center;
+  padding: 1.5rem;
+  font-weight: bold;
+}
