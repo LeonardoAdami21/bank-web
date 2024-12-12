@@ -1,5 +1,6 @@
 import React from "react";
 import "./Home.css";
+import { Link } from "react-router-dom";
 
 function HomePage() {
   return (
@@ -7,8 +8,12 @@ function HomePage() {
       <header className="header">
         <h1>Bem-vindo ao Nosso Site</h1>
         <div className="auth-buttons">
-          <button className="button">Login</button>
-          <button className="button">Registro</button>
+          <button className="button">
+            <Link to="/auth/login">Login</Link>
+          </button>
+          <button className="button">
+            <Link to="/auth/register">Registre-se</Link>
+          </button>
         </div>
       </header>
 
