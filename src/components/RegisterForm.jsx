@@ -52,7 +52,7 @@ const RegisterForm = () => {
           },
         },
       );
-      const token = response.data.access_token;
+      const token = response.data?.data.access_token;
       localStorage.setItem("token", token);
       navigate("/auth/login");
     } catch (error) {
