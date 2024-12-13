@@ -1,0 +1,91 @@
+/* Container principal */
+.accounts-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Título */
+.accounts-container h2 {
+  font-size: 1.8rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+/* Lista de contas */
+.accounts-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Estilização de cada item */
+.account-item {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+/* Efeito ao passar o mouse */
+.account-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Títulos dentro de cada item */
+.account-item h3 {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Detalhes de cada conta */
+.account-item p {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 5px 0;
+}
+
+/* Rodapé para botões */
+.accounts-footer {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Botões */
+.button {
+  display: inline-block;
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 1rem;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #45a049;
+}
+
+.button-secondary {
+  background-color: #f44336;
+  margin-left: 10px;
+}
+
+.button-secondary:hover {
+  background-color: #e53935;
+}

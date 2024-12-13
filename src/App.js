@@ -3,6 +3,9 @@ import "./App.css";
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
+import AccountsPage from "./pages/AccountsPage";
+import ProtectedRoute from "./components/ProtectedRoute";
+import PageNotFound from "./pages/PageNotFound";
 
 function App() {
   return (
@@ -13,6 +16,15 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/auth/login" element={<LoginPage />} />
           <Route path="/auth/register" element={<RegisterPage />} />
+          <Route path="/page-not-found" element={<PageNotFound />} />
+          <Route
+            path="/accounts"
+            element={
+              <ProtectedRoute allowedRoles={["USERS"]}>
+                <AccountsPage />
+              </ProtectedRoute>
+            }
+          />
         </Routes>
       </Router>
     </div>

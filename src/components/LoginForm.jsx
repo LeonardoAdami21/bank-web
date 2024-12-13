@@ -1,7 +1,8 @@
+import axios from "axios";
+import jwtDecode from "jwt-decode";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { reactBackendUrl } from "../env/envoriment";
-import axios from "axios";
 
 const LoginForm = () => {
   const [email, setEmail] = useState("");
@@ -21,25 +22,23 @@ const LoginForm = () => {
     setErrors(validationErrors);
 
     try {
-      const response = await axios.post(
-        `${reactBackendUrl}/auth/login`,
-        {
-          email,
-          password,
-        },
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        },
-      );
-      const token = response.data?.access_token;
-      localStorage.setItem("token", token);
-      navigate("/accounts");
+      const response = await axios.post(`${reactBackendUrl}/auth/login`, {
+        email: email,
+        password: password,
+      });
+      if (response.status === 200) {
+        const token = response.data?.data?.access_token;
+        localStorage.setItem("token", token);
+        navigate("/accounts");
+      } else {
+        setErrors({
+          email: "Invalid email or password",
+        });
+      }
     } catch (error) {
       console.error(error);
       setErrors({
-        email: "Invalid email or password",
+        email: "Login failed",
       });
     }
   };
