@@ -5,7 +5,6 @@ import "./Accounts.css";
 import AccountsForm from "../components/AccountsForm";
 import { Link } from "react-router-dom";
 
-
 const AccountsPage = () => {
   const [accounts, setAccounts] = useState([]);
   const [selectedAccount, setSelectedAccount] = useState(null);
@@ -56,6 +55,19 @@ const AccountsPage = () => {
 
   return (
     <div className="accounts-container">
+      <nav className="account-nav">
+        <Link to="/">Home</Link>
+        <a href="#" className="nav-link">
+          Sobre
+        </a>
+        <a href="#" className="nav-link">
+          Serviços
+        </a>
+        <a href="#" className="nav-link">
+          Contato
+        </a>
+        <Link to="/auth/logout">Sair</Link>
+      </nav>
       <h2>Gerenciamento de Contas</h2>
       {showForm ? (
         <AccountsForm
