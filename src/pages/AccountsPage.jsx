@@ -20,7 +20,7 @@ const AccountsPage = () => {
       if (!token) {
         console.log("Token not found");
       }
-      
+
       const response = await api.get("/accounts", {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -62,14 +62,14 @@ const AccountsPage = () => {
         />
       ) : (
         <>
-          <button onClick={() => setShowForm(true)} className="button">
-            Nova Conta
-          </button>
           <AccountsList
             accounts={accounts}
             onEdit={handleEdit}
             onDelete={handleDelete}
           />
+          <button onClick={() => setShowForm(true)} className="button">
+            Nova Conta
+          </button>
         </>
       )}
     </div>
