@@ -1,0 +1,117 @@
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #4caf50;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+  width: 100%;
+}
+
+input {
+  padding: 5px;
+  font-size: 14px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  width: 35%;
+  margin-right: 10px;
+}
+
+select {
+  padding: 5px;
+  font-size: 14px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  width: 70%;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+li {
+  border: 1px solid #ddd;
+  margin: 10px 0;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.button-new-transaction {
+  background-color: green;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: bold;
+  width: 150px;
+  transition: background-color 0.3s ease;
+  margin-left: 10px;
+}
+
+.button-new-transaction:hover {
+  background-color: #0056b3;
+}
+
+.button-save {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: bold;
+  width: 150px;
+  transition: background-color 0.3s ease;
+}
+
+.button-save:hover {
+  background-color: #0056b3;
+}
+
+.button-delete {
+  background-color: #ff0000;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: bold;
+  width: 150px;
+  transition: background-color 0.3s ease;
+}
+
+.button-delete:hover {
+  background-color: #cc0000;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
