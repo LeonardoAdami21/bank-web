@@ -2,38 +2,76 @@ import React, { useEffect, useState } from "react";
 import api from "../services/api"; // Configuração do Axios
 import AccountsList from "../components/AccountsList";
 import "./Accounts.css";
+import AccountsForm from "../components/AccountsForm";
 
 const AccountsPage = () => {
   const [accounts, setAccounts] = useState([]);
+  const [selectedAccount, setSelectedAccount] = useState(null);
+  const [showForm, setShowForm] = useState(false);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchAccounts = async () => {
-      try {
-        const response = await api.get("/accounts");
-        setAccounts(response.data);
-      } catch (error) {
-        console.error("Erro ao buscar contas:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
     fetchAccounts();
   }, []);
 
+  const fetchAccounts = async () => {
+    try {
+      const token = localStorage.getItem("token");
+      if (!token) {
+        console.log("Token not found");
+      }
+      
+      const response = await api.get("/accounts", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      setAccounts(response.data);
+    } catch (error) {
+      console.error("Erro ao buscar contas:", error);
+    }
+  };
+
+  const handleFormSuccess = () => {
+    setShowForm(false);
+    setSelectedAccount(null);
+    fetchAccounts();
+  };
+
+  const handleEdit = (account) => {
+    setSelectedAccount(account);
+    setShowForm(true);
+  };
+
+  const handleDelete = async (accountId) => {
+    try {
+      await api.delete(`/accounts/${accountId}`);
+      setAccounts(accounts.filter((account) => account.id !== accountId));
+    } catch (error) {
+      console.error("Erro ao excluir conta:", error);
+    }
+  };
+
   return (
     <div className="accounts-container">
-      <h2>Minhas Contas</h2>
-      {loading ? <p>Carregando...</p> : <AccountsList accounts={accounts} />}
-      <div className="accounts-footer">
-        <a href="/dashboard" className="button">
-          Voltar
-        </a>
-        <a href="/new-account" className="button button-secondary">
-          Nova Conta
-        </a>
-      </div>
+      <h2>Gerenciamento de Contas</h2>
+      {showForm ? (
+        <AccountsForm
+          accounts={selectedAccount}
+          onSuccess={handleFormSuccess}
+        />
+      ) : (
+        <>
+          <button onClick={() => setShowForm(true)} className="button">
+            Nova Conta
+          </button>
+          <AccountsList
+            accounts={accounts}
+            onEdit={handleEdit}
+            onDelete={handleDelete}
+          />
+        </>
+      )}
     </div>
   );
 };
