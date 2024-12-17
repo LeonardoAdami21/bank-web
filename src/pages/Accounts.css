@@ -8,6 +8,7 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+
 /* Título */
 .accounts-container h2 {
   font-size: 1.8rem;
@@ -87,5 +88,28 @@
 }
 
 .button-secondary:hover {
+  background-color: #e53935;
+}
+
+/* Botões de ação em cada item */
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.button.edit {
+  background-color: #4caf50;
+}
+
+.button.edit:hover {
+  background-color: #45a049;
+}
+
+.button.delete {
+  background-color: #f44336;
+}
+
+.button.delete:hover {
   background-color: #e53935;
 }
