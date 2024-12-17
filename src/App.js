@@ -7,6 +7,7 @@ import AccountsPage from "./pages/AccountsPage";
 import ProtectedRoute from "./components/ProtectedRoute";
 import PageNotFound from "./pages/PageNotFound";
 import TransactionPage from "./pages/TransactionsPage";
+import Logout from "./pages/Logout";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/auth/login" element={<LoginPage />} />
           <Route path="/auth/register" element={<RegisterPage />} />
+          <Route path="/auth/logout" element={<Logout />} />
           <Route path="/page-not-found" element={<PageNotFound />} />
           <Route
             path="/accounts"
