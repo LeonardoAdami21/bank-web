@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const AccountsList = ({ accounts }) => {
+const AccountsList = ({ accounts, onEdit, onDelete }) => {
   if (!accounts || accounts.length === 0) {
     return <p>Não há contas para exibir.</p>;
   }
@@ -14,6 +14,17 @@ const AccountsList = ({ accounts }) => {
           <p>Agência: {account.agency}</p>
           <p>Saldo: R${account.balance}</p>
           <p>Tipo: {account.type}</p>
+          <div className="actions">
+            <button className="button edit" onClick={() => onEdit(account)}>
+              Editar
+            </button>
+            <button
+              className="button delete"
+              onClick={() => onDelete(account.id)}
+            >
+              Excluir
+            </button>
+          </div>
         </li>
       ))}
     </ul>
