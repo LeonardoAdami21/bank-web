@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import api from "../services/api";
 import "./AccountsForm.css";
+import PropTypes from "prop-types";
 
 const AccountsForm = ({ accounts, onSuccess }) => {
   const [formData, setFormData] = useState({
@@ -37,7 +38,11 @@ const AccountsForm = ({ accounts, onSuccess }) => {
         const formattedBalance = parseFloat(balance);
         const token = localStorage.getItem("token");
         const headers = { Authorization: `Bearer ${token}` };
-        await api.post("/accounts", { ...rest, balance: formattedBalance }, { headers });
+        await api.post(
+          "/accounts",
+          { ...rest, balance: formattedBalance },
+          { headers },
+        );
         console.log("Conta criada com sucesso");
       }
       return onSuccess();
@@ -88,7 +93,7 @@ const AccountsForm = ({ accounts, onSuccess }) => {
   );
 };
 
-AccountForm.propTypes = {
+AccountsForm.propTypes = {
   account: PropTypes.object, // Para edição
   onSuccess: PropTypes.func.isRequired, // Chamar ao concluir
 };
