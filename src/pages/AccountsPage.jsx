@@ -3,6 +3,8 @@ import api from "../services/api"; // Configuração do Axios
 import AccountsList from "../components/AccountsList";
 import "./Accounts.css";
 import AccountsForm from "../components/AccountsForm";
+import { Link } from "react-router-dom";
+
 
 const AccountsPage = () => {
   const [accounts, setAccounts] = useState([]);
@@ -70,6 +72,7 @@ const AccountsPage = () => {
           <button onClick={() => setShowForm(true)} className="button">
             Nova Conta
           </button>
+          <Link to="/transactions">Gerenciar Transações</Link>
         </>
       )}
     </div>
