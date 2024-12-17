@@ -6,6 +6,7 @@ import RegisterPage from "./pages/RegisterPage";
 import AccountsPage from "./pages/AccountsPage";
 import ProtectedRoute from "./components/ProtectedRoute";
 import PageNotFound from "./pages/PageNotFound";
+import TransactionPage from "./pages/TransactionsPage";
 
 function App() {
   return (
@@ -22,6 +23,14 @@ function App() {
             element={
               <ProtectedRoute allowedRoles={["USERS"]}>
                 <AccountsPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/transactions"
+            element={
+              <ProtectedRoute allowedRoles={["USERS"]}>
+                <TransactionPage />
               </ProtectedRoute>
             }
           />
