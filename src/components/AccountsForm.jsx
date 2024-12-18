@@ -10,6 +10,7 @@ const AccountsForm = ({ accounts, onSuccess }) => {
     type: "CHECKING" || "SAVING",
   });
   const [errors, setErrors] = useState({});
+  const [showForm, setShowForm] = useState(false);
 
   useEffect(() => {
     if (accounts) {
@@ -23,6 +24,12 @@ const AccountsForm = ({ accounts, onSuccess }) => {
       ...prevFormData,
       [name]: value,
     }));
+  };
+
+  const handleFormSuccess = () => {
+    setShowForm(false);
+    setSelectedAccount(null);
+    fetchAccounts();
   };
 
   const handleSubmit = async (e) => {
@@ -89,6 +96,13 @@ const AccountsForm = ({ accounts, onSuccess }) => {
         {errors.type && <p>{errors.type}</p>}
       </div>
       <button type="submit">Salvar</button>
+      <button
+        type="button"
+        className="button"
+        onClick={() => setShowForm(false)}
+      >
+        Cancelar
+      </button>
     </form>
   );
 };
