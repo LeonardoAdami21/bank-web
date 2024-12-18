@@ -8,29 +8,6 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.account-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-  padding: 0 20px;
-  background-color: #000;
-  color: #ddd;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.account-nav a {
-  text-decoration: none;
-  color: #ddd;
-  font-weight: 600;
-  transition: color 0.3s;
-}
-
-.account-nav a:hover {
-  color: #4caf50;
-}
-
 /* Título */
 .accounts-container h2 {
   font-size: 1.8rem;

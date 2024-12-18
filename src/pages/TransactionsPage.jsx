@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import TransactionList from "../components/TransactionsList";
 import TransactionForm from "../components/TransactionForm";
 import "./Transactions.css";
+import NavBar from "../components/Navbar";
 
 const TransactionPage = () => {
   const [showForm, setShowForm] = useState(false);
@@ -20,7 +21,7 @@ const TransactionPage = () => {
   return (
     <div>
       <h1>Gerenciamento de Transações</h1>
-
+      <NavBar />
       {showForm && (
         <TransactionForm
           transaction={currentTransaction}

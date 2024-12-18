@@ -43,3 +43,12 @@
 .account-form button:hover {
   background-color: #45a049;
 }
+
+.account-form button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.account-form button:disabled:hover {
+  background-color: #ccc;
+}
